@@ -7,33 +7,53 @@ To write a python program to implement multivariate linear regression and predic
 ## Algorithm:
 ### Step1
 <br>
+import pandas library and linear_model from sklearn using import statement.
 
 ### Step2
 <br>
+Read the given csv file using read_csv()
 
 ### Step3
 <br>
+Create two arrays, indenpendent array x withtwo classes and dependent array y with one class. Find the regression of x and y using linear_model.
+Linear Regression() method and fit x and y using .fit() method.
 
 ### Step4
 <br>
+Find the coefficients using coef_and intercept using intercept_
 
 ### Step5
 <br>
+Predict the linear regression using regr.predict()method and display the result
 
 ## Program:
 ```
-
-
-
-
-
+import pandas as pd
+from sklearn import linear_model
+df = pd.read_csv("carsemission.csv")
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+print('Coefficients:', regr.coef_)
+print('Intercept:', regr.intercept_)
+input_data = pd.DataFrame({'Weight': [3300], 'Volume': [1300]})
+predictedCO2 = regr.predict(input_data)
+print('Predicted CO2 for the corresponding weight and volume:', predictedCO2)
 
 ```
 ## Output:
+```
+coefficients: [0.00755095 0.00780526]
+Intercept: 79.69471929115939
+Predicted co2 for the coressponding weight and volume [111.71387014]
 
+```
 ### Insert your output
-
 <br>
 
-## Result
+![WhatsApp Image 2024-12-11 at 19 25 56_42265592](https://github.com/user-attachments/assets/3ce8e3b3-13f9-40d0-9666-3f9c7c7d743c)
+
+### Result
+
 Thus the multivariate linear regression is implemented and predicted the output using python program.
